@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://m.media-amazon.com/images/I/812qIaeBaqL._UF1000,1000_QL80_.jpg">
+    <title>Does This Look Infected? - Dostream</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(43,121,9,1) 82%, rgba(181,255,0,1) 100%);  ;
+            padding: 20px;
+        }
+        #player {
+            margin-top: 20px;
+        }
+        #playlist {
+            list-style-type: none;
+            padding: 0;
+            color: beige;
+        }
+        #playlist li {
+            cursor: pointer;
+            padding: 5px;
+            background-color: rgb(51, 49, 49);
+            margin: 5px 0;
+            border-radius: 5px;
+            
+        }
+        #playlist li:hover {
+            background-color:green;
+        }
+        h1 {color: beige;}
+
+        p {color: beige;}
+    </style>
+</head>
+<body>
+    <img src="https://m.media-amazon.com/images/I/812qIaeBaqL._UF1000,1000_QL80_.jpg" width="250">
+    <h1>Does This Look Infected?</h1>
+    <p>Sum 41 second studio album, released in November 26, 2002</p>
+
+    <audio id="audioPlayer" controls>
+        <source id="audioSource" src="" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <ul id="playlist">
+        <li data-src="Sum 41 - The Hell Song.mp3">The Hell Song (Album Version)</li>
+        <li data-src="Sum 41 - Over My Head (Better Off Dead).mp3">Over My Head (Better Off Dead) (Album Version)</li>
+        <li data-src="Sum 41 - My Direction.mp3">My Direction (Album Version)</li>
+        <li data-src="Sum 41 - Still Waiting.mp3">Still Waiting (アルバムバージョン) (Explicit)</li>
+        <li data-src="Sum 41 - A.N.I.C.mp3">A.N.I.C (Anne Nicollson Is A C*nt) (Explicit)</li>
+        <li data-src="Sum 41 - No Brains.mp3">No Brains (Album Version) (Explicit)</li>
+        <li data-src="Sum 41 - All Messed Up.mp3">All Messed Up (Album Version) (Explicit) </li>
+        <li data-src="Sum 41 - Mr. Amsterdam.mp3"> Mr. Amsterdam (Album Version) (Explicit)</li>
+        <li data-src="Sum 41 - Thanks For Nothing.mp3">Thanks For Nothing (Album Version) (Explicit)</li>
+        <li data-src="Sum 41 - Hyper-Insomnia-Para-Condrioid.mp3">Hyper-Insomnia-Para-Condrioid (Album Version) (Explicit)</li>
+        <li data-src="Sum 41 - Hyper-Insomnia-Para-Condrioid.mp3">Billy Spleen (Album Version) (Explicit)</li>
+        <li data-src="Sum 41 - Hooch.mp3">Hooch (Album Version) (Explicit)</li>
+        <li data-src="Verschillende artiesten - Reign in Pain (feat. Sum 41).mp3">Reign In Pain (Heavy Metal Jamboree) (Hidden Track JP Vinyl)</li>
+        <li data-src="Y2meta.app - Sum 41 - WWVII Part I & II _ Subtitulado (320 kbps).mp3">WWVII Part 1 & 2 (Hidden Track UK Vinyl Version)</li>
+
+        <p>Also, you can Enjoy more Sum 41 Albums like:<br>
+        ---This section is under construction, come back later--- </p>
+
+    </ul>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioSource = document.getElementById('audioSource');
+        const playlistItems = document.querySelectorAll('#playlist li');
+
+        playlistItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const src = item.getAttribute('data-src');
+                audioSource.src = src;
+                audioPlayer.load();
+                audioPlayer.play();
+            });
+        });
+    </script>
+</body>
+</html>
